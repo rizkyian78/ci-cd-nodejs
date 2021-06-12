@@ -13,6 +13,13 @@ it("Call the endpoint landing", (done) => {
   });
 });
 
+it("Call the endpoint landing", (done) => {
+  request.get("/youtube").then((res) => {
+    expect(res.statusCode).toBe(200);
+    done();
+  });
+});
+
 // it("Call the Cat Get ALl endpoint", (done) => {
 //   request.get("/cat").then((res) => {
 //     expect(res.statusCode).toBe(200);
