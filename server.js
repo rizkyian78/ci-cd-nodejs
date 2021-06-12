@@ -6,7 +6,7 @@ app.get("/", (req, res) => {
   res.send("Okeeee");
 });
 app.get("/youtube", (req, res) => {
-  res.send("Okesss");
+  res.send("Okessss");
 });
 
 // app.get("/cat", async (req, res) => {
