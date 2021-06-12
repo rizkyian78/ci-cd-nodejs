@@ -1,0 +1,29 @@
+# docker-compose version
+version: "3.7"
+services:
+  # build image
+  mongodb:
+    image: mongo:latest
+    container_name: mongo
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - cat-networks
+    # nama container
+  cat-app:
+    build: .
+    container_name: cat-app-container
+    networks:
+      - cat-networks
+    ports:
+      - 3006:3005
+    environment:
+      WAIT_HOSTS: mongo:27017
+    #   binding server
+    volumes:
+      - .:/app
+# dengan multi stage build dapat memangkas sizze banyak js tidak bisa multi stage
+networks:
+  cat-networks:
+volumes:
+  mongodb-data:
