@@ -23,6 +23,7 @@ app.post("/cat", (req, res) => {
   const payload = req.body;
   const kitten = new cat(payload);
   kitten.save().then(() => {
+    console.log("asdas");
     res.status(200).send("Njeng kitten added 🐈");
   });
 });
